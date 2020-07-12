@@ -1,1 +1,1 @@
-# service-schedule
+# appointment-scheduler

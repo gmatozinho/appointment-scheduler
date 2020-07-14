@@ -5,8 +5,7 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const mongoose = require("mongoose");
 
-const indexRouter = require("./routes/index");
-const usersRouter = require("./routes/users");
+const routes = require("./routes");
 
 const createApp = async () => {
   var app = express();
@@ -28,8 +27,9 @@ const createApp = async () => {
       console.log(error);
     });
 
-  app.use("/", indexRouter);
-  app.use("/users", usersRouter);
+  app.use("/appoitment", routes.appoitment);
+  app.use("/professional", routes.professional);
+  app.use("/professional-slots", routes.professional_slots);
 
   // catch 404 and forward to error handler
   app.use(function (req, res, next) {

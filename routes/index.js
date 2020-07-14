@@ -1,9 +1,5 @@
-var express = require('express');
-var router = express.Router();
+const appoitment = require("./appoitment");
+const professional_slots = require("./professional_slots");
+const professional = require("./professional");
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.send('its on');
-});
-
-module.exports = router;
+module.exports = { appoitment, professional_slots, professional };

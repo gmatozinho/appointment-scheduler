@@ -14,11 +14,15 @@ const appoitment_schema = new Schema({
     type: String,
     require: true,
   },
-  starts: {
+  slot_starts: {
     type: String,
     require: true,
   },
-  ends: {
+  slot_ends: {
+    type: String,
+    require: true,
+  },
+  professionalId: {
     type: String,
     require: true,
   },

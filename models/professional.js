@@ -11,7 +11,7 @@ const professional_slots_schema = new Schema({
     require: true,
   },
   open: {
-    type: String,
+    type: Boolean,
     require: true,
   },
 });

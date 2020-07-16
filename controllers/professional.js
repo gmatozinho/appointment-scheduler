@@ -39,11 +39,11 @@ const readById = async (id) => {
   }
 };
 
-const readByTimeInterval = async ({id,start,end}) => {
+const readByTimeInterval = async ({ id, start, end }) => {
   try {
     const wanted_professional = await readById(id);
-    const json = JSON.parse(JSON.stringify(wanted_professional))
-    slots.filter_slots(json,start,end)
+    const json = JSON.parse(JSON.stringify(wanted_professional));
+    slots.filter_slots(json, start, end);
 
     return json;
   } catch (error) {
@@ -60,7 +60,10 @@ const update = async (id, body) => {
       slots: professional_slots,
     };
 
-    const updated_professional = await professional.update(id,professional_to_update);
+    const updated_professional = await professional.update(
+      id,
+      professional_to_update
+    );
 
     return updated_professional;
   } catch (error) {
@@ -70,7 +73,6 @@ const update = async (id, body) => {
 
 const remove = async (id) => {
   try {
-
     const deleted_professional = await professional.remove(id);
 
     return deleted_professional;

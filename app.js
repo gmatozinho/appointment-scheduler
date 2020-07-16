@@ -16,7 +16,7 @@ const createApp = async () => {
   app.use(cookieParser());
 
   await mongoose
-    .connect("mongodb://localhost:27017/appointment-scheduler", {
+    .connect("mongodb://db:27017/appointment-scheduler", {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })

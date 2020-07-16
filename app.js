@@ -16,7 +16,7 @@ const createApp = async () => {
   app.use(cookieParser());
 
   await mongoose
-    .connect("mongodb://db:27017/appointment-scheduler", {
+    .connect("mongodb://localhost:27017/appointment-scheduler", {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })
@@ -29,7 +29,6 @@ const createApp = async () => {
 
   app.use("/appoitment", routes.appoitment);
   app.use("/professional", routes.professional);
-  app.use("/professional-slots", routes.professional_slots);
 
   // catch 404 and forward to error handler
   app.use(function (req, res, next) {
